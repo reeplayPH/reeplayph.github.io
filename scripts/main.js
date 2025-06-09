@@ -4,8 +4,6 @@ let filteredHousemates = [];
 let ranking = newRanking();
 const rowNums = [1, 3];
 const currentURL = "https://reeplayph.github.io/";
-let showEvicted = true;
-let showNominated = true;
 
 const alternateRomanizations = {
 	'az and river': ['azver','az','martinez','ang miss sunuring daughter ng cebu','cebu','river','joseph','ang sporty business bro ng muntinlupa city','muntinlupa'],

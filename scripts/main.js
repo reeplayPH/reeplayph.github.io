@@ -290,7 +290,7 @@ function populateRankingEntry(housemate, currRank) {
     filterInput.addEventListener("input", filterHousemates);
   }
 
-  // Optional: Toggle menu logic
+  //Optional: Toggle menu logic
   const menuIcon = document.querySelector(".display-options-icon");
   const menu = document.getElementById("clickMenu");
   if (menuIcon && menu) {

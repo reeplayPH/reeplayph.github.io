@@ -381,13 +381,13 @@ body {
   margin-top: 10px;
 }
 
-#ranking__pyramid, #ranking__pyramid2 {
+#ranking__pyramid {
   display: flex;
   flex-direction: column;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 150px; /* Set a fixed width for each pyramid */
+  width: 300px; /* Set a fixed width for each pyramid */
 }
 
 #ranking__title {

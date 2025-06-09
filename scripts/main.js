@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("CSV data successfully loaded and table populated.");
 
     // Step 4: Populate the ranking pyramids
-    console.log("Populating ranking pyramids...");
-    populateRanking();
-    console.log("Ranking pyramids populated successfully.");
+    //console.log("Populating ranking pyramids...");
+    // populateRanking();
+    //console.log("Ranking pyramids populated successfully.");
 
   } catch (error) {
     console.error("An error occurred during initialization:", error);
@@ -242,12 +242,12 @@ function populateRankingEntry(housemate, currRank) {
 	<img class="ranking__entry-img" src="assets/final_duo/${housemate.image}" />
 	<div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
 	</div>
-		<div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
-		${nominated ? '<div class="ranking__entry-nominated"></div>' : ''}
-		</div>
-		<div class="ranking__row-text">
-		<div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>
-		</div>
+	<div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
+	${nominated ? '<div class="ranking__entry-nominated"></div>' : ''}
+	</div>
+	<div class="ranking__row-text">
+	<div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>
+	</div>
 	</div>`;
 	return rankingEntry;
 }

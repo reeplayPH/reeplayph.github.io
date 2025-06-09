@@ -61,6 +61,7 @@ function convertCSVArrayToHousemateData(csvArrays) {
       housemate.fullname = housemateArray[0];
       housemate.duoname = housemateArray[1];
       housemate.duoname2 = housemateArray[2];
+      housemate.duoname2color = housemateArray[3];
       housemate.evicted = housemateArray[6] === 'e'; // Evicted flag
       housemate.big4 = housemateArray[6] === 'b'; // Top 4 flag
       housemate.nominated = housemateArray[6] === 'n'; // Nominated flag

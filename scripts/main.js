@@ -16,6 +16,33 @@ const alternateRomanizations = {
 	'shuvee and klarisse': ['shukla','shuvee','etrata','katipunera','island ate ng cebu','ang island ate ng cebu','cebu','klang','klarisse','ate klang','deguzman','de guzman','ang kwela soul diva ng antipolo','antipolo']
 };
 
+window.onload = function() {
+    document.getElementById('clickMenu').style.display = 'none'; // Ensure menu is hidden on page load
+
+    document.getElementById('.display-options-icon').addEventListener('click', function() {
+        var menu = document.getElementById('clickMenu');
+        if (menu.style.display === 'none') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+};
+
+function toggleMenu() {
+  var menu = document.getElementById('clickMenu');
+  /*if (menu.style.display === 'block') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'block';
+  }*/
+        if (menu.style.display === 'none') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+}
+
 // uses the current filter text to create a subset of housemates with matching info
 function filterHousemates(event) {
   let filterText = event.target.value.toLowerCase();

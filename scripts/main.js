@@ -157,7 +157,7 @@ function populateRankingEntry(housemate, currRank) {
   <div class="ranking__entry ${evicted}">
     <div class="ranking__entry-view">
       <div class="ranking__entry-icon">
-        <img class="ranking__entry-img" src="assets/housemates/${housemate.image}" />
+        <img class="ranking__entry-img" src="assets/final_duo/${housemate.image}" />
         <div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
       </div>
       <div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>

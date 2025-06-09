@@ -394,6 +394,14 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.ranking__row_bw {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+}
 .ranking__row {
   display: flex;
   flex-direction: row;

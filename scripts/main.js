@@ -181,7 +181,8 @@ function rankingClicked(housemate) {
 	rerenderRanking();
 }
 
-function swapHousemates(index1, index2) {
+// Move outside DOMContentLoaded or attach to window
+window.swapHousemates = function(index1, index2) {
   tempHousemate = ranking[index1];
   ranking[index1] = ranking[index2];
   ranking[index2] = tempHousemate;

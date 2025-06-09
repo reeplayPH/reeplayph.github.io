@@ -169,8 +169,26 @@ function populateRankingEntry(housemate, currRank) {
   </div>`;
   return rankingEntry;
 }
+  
+// Event handler for ranking
+function rankingClicked(housemate) {
+	if (housemate.selected) {
+    housemate.selected = !housemate.selected;
+    // Remove the housemate from the ranking
+    removeRankedHousemate(housemate);
+  }
+  rerenderTable();
+	rerenderRanking();
+}
 
-  function populateTable(housemates) {
+function swapHousemates(index1, index2) {
+  tempHousemate = ranking[index1];
+  ranking[index1] = ranking[index2];
+  ranking[index2] = tempHousemate;
+  rerenderRanking();
+}
+
+function populateTable(housemates) {
     const table = document.getElementById("table__entry-container");
     housemates.forEach(h => {
       const entryHTML = populateTableEntry(h);

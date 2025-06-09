@@ -165,7 +165,6 @@ function populateRankingEntry(housemate, currRank) {
     </div>
     <div class="ranking__row-text">
       <div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>
-      <div class="year">${housemate.age}</div>
     </div>
   </div>`;
   return rankingEntry;
@@ -195,7 +194,6 @@ function populateRankingEntry(housemate, currRank) {
         <div class="table__entry-text">
           <span class="fullname"><strong>${h.fullname}</strong></span>
           <span class="duoname2">(${h.duoname2})</span>
-          <span class="ageandlocation">${h.age} • ${h.location.toUpperCase()}</span>
         </div>
       </div>`;
   }

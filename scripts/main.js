@@ -16,6 +16,26 @@ const alternateRomanizations = {
 	'shuvee and klarisse': ['shukla','shuvee','etrata','katipunera','island ate ng cebu','ang island ate ng cebu','cebu','klang','klarisse','ate klang','deguzman','de guzman','ang kwela soul diva ng antipolo','antipolo']
 };
 
+// uses the current filter text to create a subset of housemates with matching info
+function filterHousemates(event) {
+  let filterText = event.target.value.toLowerCase();
+  // filters housemates based on name, alternate names, location and birth year
+  filteredHousemates = housemates.filter(function (housemate) {
+    let initialMatch = includesIgnCase(housemate.fullname, filterText) || includesIgnCase (housemate.duoname2, filterText);
+    // if alernates exists then check them as well
+    let alternateMatch = false;
+    let alternates = alternateRomanizations[housemate.fullname.toLowerCase()]
+    if (alternates) {
+      for (let i = 0; i < alternates.length; i++) {
+        alternateMatch = alternateMatch || includesIgnCase(alternates[i], filterText);
+      }
+    }
+    return initialMatch || alternateMatch;
+  });
+  filteredHousemates = sortedHousemates(filteredHousemates);
+  rerenderTable();
+}
+
 function newHousemate() {
 	return {
 		id: -1,

@@ -1,9 +1,84 @@
-// Global variables
-let housemates = [];
-let filteredHousemates = [];
-let ranking = newRanking();
-const rowNums = [1, 3];
-const currentURL = "https://reeplayph.github.io/";
+document.addEventListener("DOMContentLoaded", async function () {
+  console.log("Page loaded. Initializing...");
+
+  try {
+    // Step 1: Initialize blank rankings
+    ranking = newRanking();
+    console.log("Initialized rankings:", ranking);
+
+    // Step 2: Fetch any saved rankings from the URL
+    console.log("Fetching saved rankings (if any)...");
+    getRanking();
+
+    // Step 3: Fetch CSV and populate the table
+    console.log("Fetching CSV data...");
+    await readFromCSV("./housemate_info.csv");
+    console.log("CSV data successfully loaded and table populated.");
+
+    // Step 4: Populate the ranking pyramids
+    console.log("Populating ranking pyramids...");
+    populateRanking();
+    console.log("Ranking pyramids populated successfully.");
+
+  } catch (error) {
+    console.error("An error occurred during initialization:", error);
+  }
+});
+
+// Constructor for a blank ranking list
+function newRanking() {
+  // Holds the ordered list of rankings that the user selects
+  let ranking = new Array(4); // Adjust size as needed
+  for (let i = 0; i < ranking.length; i++) {
+    ranking[i] = newHousemate();
+  }
+  console.log("Created a new blank ranking:", ranking);
+  return ranking;
+}
+
+// Enhanced readFromCSV to handle errors gracefully
+async function readFromCSV(path) {
+  try {
+    const response = await fetch(path);
+    if (response.ok) {
+      const allText = await response.text();
+      const csvData = CSV.parse(allText);
+      const housemates = convertCSVArrayToHousemateData(csvData);
+      populateTable(housemates);
+      console.log("Table data populated:", housemates);
+    } else {
+      console.error("Failed to fetch CSV. HTTP Status:", response.status);
+    }
+  } catch (error) {
+    console.error("Error fetching or parsing the CSV file:", error);
+  }
+}
+
+function convertCSVArrayToHousemateData(csvArrays) {
+  try {
+    housemates = csvArrays.map(function (housemateArray, index) {
+      if (housemateArray.length < 8) {
+        console.warn(`Skipping invalid CSV row at index ${index}:`, housemateArray);
+        return newHousemate(); // Fallback to a blank housemate
+      }
+      housemate = {};
+      housemate.fullname = housemateArray[0];
+      housemate.duoname = housemateArray[1];
+      housemate.duoname2 = housemateArray[2];
+      housemate.evicted = housemateArray[6] === 'e'; // Evicted flag
+      housemate.big4 = housemateArray[6] === 'b'; // Top 4 flag
+      housemate.nominated = housemateArray[6] === 'n'; // Nominated flag
+      housemate.id = parseInt(housemateArray[7]) - 1; // Housemate ID
+      housemate.image = housemate.fullname.replaceAll(" ", "").replaceAll("-", "") + ".JPG";
+      return housemate;
+    });
+    filteredHousemates = housemates;
+    return housemates;
+  } catch (error) {
+    console.error("Error converting CSV data to housemate objects:", error);
+    return [];
+  }
+}
 
 const alternateRomanizations = {
 	'az and river': ['azver','az','martinez','ang miss sunuring daughter ng cebu','cebu','river','joseph','ang sporty business bro ng muntinlupa city','muntinlupa'],
@@ -68,46 +143,14 @@ function newHousemate() {
 		duoname: '&#8203;',
 		duoname2: '&#8203;',
 		duoname2color: 'gray',
-		age: '',
-		location: '',
 		image: 'emptyrank.png',
 		selected: false
 	};
 }
 
-function newRanking() {
-	return Array.from({ length: 4 }, () => newHousemate());
-}
-
-async function readFromCSV(path) {
-	try {
-		const response = await fetch(path);
-		if (!response.ok) throw new Error(`HTTP ${response.status}`);
-		const text = await response.text();
-		const csvData = CSV.parse(text);
-		housemates = csvData.map((row, i) => {
-			if (row.length < 8) return newHousemate();
-			return {
-				fullname: row[0],
-				duoname: row[1],
-				duoname2: row[2],
-				duoname2color: row[3],
-				age: row[4],
-				location: row[5],
-				evicted: row[6] === 'e',
-				big4: row[6] === 'b',
-				nominated: row[6] === 'n',
-				id: parseInt(row[7]) - 1,
-				image: row[0].replaceAll(" ", "").replaceAll("-", "") + ".JPG",
-				selected: false
-			};
-		});
-		filteredHousemates = [...housemates];
-		populateTable(filteredHousemates);
-	} catch (err) {
-	console.error("CSV load error:", err);
-	}
-}
+//function newRanking() {
+//	return Array.from({ length: 4 }, () => newHousemate());
+//}
 
 function includesIgnCase(main, sub) {
 	return main.toLowerCase().includes(sub.toLowerCase());
@@ -338,3 +381,15 @@ async function copyLink() {
 	console.error("Failed to copy link:", err);
 	}
 }
+
+let housemates = [];
+let filteredHousemates = [];
+let ranking = newRanking();
+const rowNums = [1, 3];
+const currentURL = "https://reeplayph.github.io/";
+
+  populateRanking();
+  readFromCSV("./trainee_info.csv");
+//});
+// checks the URL for a ranking and uses it to populate ranking
+getRanking();

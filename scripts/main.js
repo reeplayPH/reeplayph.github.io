@@ -340,37 +340,3 @@ async function copyLink() {
 	console.error("Failed to copy link:", err);
 	}
 }
-
-// Initialize the app
-await readFromCSV("./final_duo_info.csv");
-	getRanking();
-	rerenderTable();
-	rerenderRanking();
-
-	// Optional: Attach filter input listener
-	const filterInput = document.getElementById("filter-input");
-		if (filterInput) {
-			filterInput.addEventListener("input", filterHousemates);
-		}
-
-	//Optional: Toggle menu logic
-	const menuIcon = document.querySelector(".display-options-icon");
-	const menu = document.getElementById("clickMenu");
-		if (menuIcon && menu) {
-			menu.style.display = "none";
-			menuIcon.addEventListener("click", () => {
-			menu.style.display = menu.style.display === "none" ? "block" : "none";
-			});
-		}
-
-	// Optional: Close menu when clicking outside
-	window.addEventListener("click", function (event) {
-	if (!event.target.matches('.display-options-icon')) {
-		const menus = document.getElementsByClassName('click-menu');
-		for (let i = 0; i < menus.length; i++) {
-			if (menus[i].style.display === 'block') {
-			menus[i].style.display = 'none';
-			}
-		}
-	}
-});

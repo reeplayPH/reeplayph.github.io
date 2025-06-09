@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     return main.toLowerCase().includes(sub.toLowerCase());
   }
 
-  function filterHousemates(event) {
+  window.function filterHousemates(event) {
     const filterText = event.target.value.toLowerCase();
     filteredHousemates = housemates.filter(h => {
       const baseMatch = includesIgnCase(h.fullname, filterText) || includesIgnCase(h.duoname2, filterText);

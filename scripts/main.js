@@ -88,16 +88,16 @@ function includesIgnCase(main, sub) {
 	return main.toLowerCase().includes(sub.toLowerCase());
 }
 
-window.function filterHousemates(event) {
-	const filterText = event.target.value.toLowerCase();
-	filteredHousemates = housemates.filter(h => {
-		const baseMatch = includesIgnCase(h.fullname, filterText) || includesIgnCase(h.duoname2, filterText);
-		const alternates = alternateRomanizations[h.fullname.toLowerCase()] || [];
-		const altMatch = alternates.some(alt => includesIgnCase(alt, filterText));
-		return baseMatch || altMatch;
-	});
-	rerenderTable();
-}
+//function filterHousemates(event) {
+//	const filterText = event.target.value.toLowerCase();
+//	filteredHousemates = housemates.filter(h => {
+//		const baseMatch = includesIgnCase(h.fullname, filterText) || includesIgnCase(h.duoname2, filterText);
+//		const alternates = alternateRomanizations[h.fullname.toLowerCase()] || [];
+//		const altMatch = alternates.some(alt => includesIgnCase(alt, filterText));
+//		return baseMatch || altMatch;
+//	});
+//	rerenderTable();
+//}
 
 function rerenderTable() {
 	clearTable();

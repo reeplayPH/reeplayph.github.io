@@ -271,13 +271,13 @@ function populateTable(housemates) {
     }
   }
 
-  function generateShareLink() {
+  window.function generateShareLink() {
     const code = btoa(ranking.map(h => ("0" + h.id).slice(-2)).join(""));
     const shareURL = `${currentURL}?r=${code}`;
     showShareLink(shareURL);
   }
 
-  function showShareLink(url) {
+  window.function showShareLink(url) {
     const box = document.getElementById("getlink-textbox");
     if (box) {
       box.value = url;

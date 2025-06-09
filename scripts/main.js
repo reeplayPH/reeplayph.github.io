@@ -145,6 +145,32 @@ function populateRanking() {
   }
 }
 
+// Uses populated local data structure from getRanking to populate ranking
+function populateRankingEntry(housemate, currRank) {
+  let evicted = (showEvicted && housemate.evicted) ? "evicted" : "";
+  let nominated = (showNominated && housemate.nominated) ? "nominated" : "";
+  let RankTag = "BIG WINNER";
+  if (currRank != 1) {
+    RankTag = currRank.toString(); 
+  }
+  const rankingEntry = `
+  <div class="ranking__entry ${evicted}">
+    <div class="ranking__entry-view">
+      <div class="ranking__entry-icon">
+        <img class="ranking__entry-img" src="assets/housemates/${housemate.image}" />
+        <div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
+      </div>
+      <div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
+      ${nominated ? '<div class="ranking__entry-nominated"></div>' : ''}
+    </div>
+    <div class="ranking__row-text">
+      <div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>
+      <div class="year">${housemate.age}</div>
+    </div>
+  </div>`;
+  return rankingEntry;
+}
+
   function populateTable(housemates) {
     const table = document.getElementById("table__entry-container");
     housemates.forEach(h => {

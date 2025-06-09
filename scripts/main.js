@@ -57,10 +57,6 @@ async function readFromCSV(path) {
 function convertCSVArrayToHousemateData(csvArrays) {
   try {
     housemates = csvArrays.map(function (housemateArray, index) {
-      if (housemateArray.length < 8) {
-        console.warn(`Skipping invalid CSV row at index ${index}:`, housemateArray);
-        return newHousemate(); // Fallback to a blank housemate
-      }
       housemate = {};
       housemate.fullname = housemateArray[0];
       housemate.duoname = housemateArray[1];

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122340888-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122340888-1');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PBB Collab Big 4 Ranker</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="initial-scale = 2.0, maximum-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+</head>
+<body>
+  <div id="top-banner">
+    <p id="version">v1.0.0</p>
+    <img id="banner-image" src="assets/logo_pbb.png"/>
+    <p id="banner-title">WHO WINS...YOU DECIDE!</p>
+    <p id="banner-subtitle">Who are your KAPAMILYA and KAPUSO BIG 4?</p>
+  </div>
+  <div class="flex-container padded-box">
+    <div>
+      <div id="tooltip-container">
+        <!-- add tool tip faq stuff here -->
+      </div>
+      <div id="table">
+        <div id="table__filter-container">
+          <input id="table__filter-input" oninput="filterHousemates(event)" type="text" placeholder="Search Housemate/s"/>
+          <div class="icon-container">
+            <i class="fas fa-sliders-h display-options-icon" onclick="toggleMenu()"></i>
+            <div class="click-menu" id="clickMenu">
+              <ul>
+                <li>
+                  <input type="checkbox" name="show-evicted" id="show-evicted" onclick="showEvictedClick(event)"/>
+                  <label class="checkbox-label" for="show-evicted">Show Evicted (At Bottom)</label>
+                </li>
+                <!-- <li>
+                  <input type="checkbox" name="show-big4" id="show-big4" onclick="showBig4Click(event)"/>
+                  <label class="checkbox-label" for="show-big4">Show Current Duos</label>
+                </li> -->
+                <li>
+                  <input type="checkbox" name="show-nominated" id="show-nominated" onclick="showNominatedClick(event)"/>
+                  <label class="checkbox-label" for="show-nominated">Show Nominated</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="table__entry-container">
+        </div>
+      </div>
+      <!-- <div id="filters-container">
+        <div id="filters-header"><strong>Filters</strong></div>
+        <div>
+          <input type="checkbox" name="show-evicted" id="show-evicted" onclick="showEvictedClick(event)"/>
+          <label class="checkbox-label" for="show-evicted">Show Evicted (At Bottom)</label>
+        </div>
+        <div>
+          <input type="checkbox" name="show-big4" id="show-big4" onclick="showBig4Click(event)"/>
+          <label class="checkbox-label" for="show-big4">Show Current Duos</label>
+        </div>
+      </div> -->
+      <div id="sharelink-container">
+        <!-- button -->
+        <input type="button" id="getlink-button" value="Get link" onclick="generateShareLink()"/>
+        <!-- text box -->
+        <input type="text" placeholder="http://" id="getlink-textbox" readonly/>
+        <!-- button in text box -->
+        <input type="button" id="copylink-button" value="Copy" onclick="copyLink()"/>
+      </div>
+    </div>
+    <div id="parent-ranking">
+      <div id="ranking__pyramid">
+        <div id="ranking__title"><strong>KAPAMILYA BIG 4</strong></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+      </div>
+      <div id="ranking__pyramid2">
+        <div id="ranking__title"><strong>KAPUSO BIG 4</strong></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+        <div class="ranking__row"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load in script files -->
+  <script src="scripts/csv.js"></script>
+  <script src="scripts/dragula.min.js"></script>
+  <script src="scripts/dragdrop.js"></script>
+  <script src="scripts/housematesort.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>

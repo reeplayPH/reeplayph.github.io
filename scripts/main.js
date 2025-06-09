@@ -463,27 +463,6 @@ function includesIgnCase(mainString, subString) {
   return mainString.toLowerCase().includes(subString.toLowerCase());
 }
 
-// Finds the first blank spot for
-/*function addRankedHousemate(housemate) {
-  for (let i = 0; i < ranking.length; i++) {
-    if (ranking[i].id === -1) { // if spot is blank denoted by -1 id
-      ranking[i] = housemate;
-      return true;
-    }
-  }
-  return false;
-}
-
-function removeRankedHousemate(housemate) {
-  for (let i = 0; i < ranking.length; i++) {
-    if (ranking[i].id === housemate.id) { // if housemate's match
-      ranking[i] = newHousemate();
-      return true;
-    }
-  }
-  return false;
-}*/
-
 function addRankedHousemate(housemate) {
   for (let i = 0; i < ranking.length; i++) {
     if (ranking[i].id === -1) { // if spot is blank denoted by -1 id
@@ -536,7 +515,7 @@ var housemates = [];
 // holds the list of housemates to be shown on the table
 var filteredHousemates = [];
 // holds the ordered list of rankings that the user selects
-var ranking = new Array(4).fill(newHousemate()); 
+var ranking = newRanking();
 const rowNums = [1,3];
 //window.addEventListener("load", function () {
   populateRanking();

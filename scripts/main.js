@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Step 3: Fetch CSV and populate the table
     console.log("Fetching CSV data...");
-    await readFromCSV("./housemate_info.csv");
+    await readFromCSV("./final_duo_info.csv");
     console.log("CSV data successfully loaded and table populated.");
 
     // Step 4: Populate the ranking pyramids
@@ -389,7 +389,7 @@ const rowNums = [1, 3];
 const currentURL = "https://reeplayph.github.io/";
 
   populateRanking();
-  readFromCSV("./trainee_info.csv");
+  readFromCSV("./final_duo_info.csv");
 //});
 // checks the URL for a ranking and uses it to populate ranking
 getRanking();

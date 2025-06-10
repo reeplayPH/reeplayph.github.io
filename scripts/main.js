@@ -242,8 +242,8 @@ bigWinnerClass = "big-winner";
 
 const rankingEntry = `
 <div class="ranking__entry ${evicted}">
-<div class="ranking__entry-view">
-<div class="ranking__entry-icon ${bigWinnerClass}">
+<div class="ranking__entry-view ${bigWinnerClass}">
+<div class="ranking__entry-icon">
 <img class="ranking__entry-img" src="assets/final_duo/${housemate.image}" />
 <div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
 </div>

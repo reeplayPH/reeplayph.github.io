@@ -395,13 +395,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.ranking__row_bw {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 150px;
-  height: 100px;
-}
 .ranking__row {
   display: flex;
   flex-direction: row;
@@ -424,7 +417,7 @@ body {
 
 .ranking__entry-icon.big-winner {
 transform: scale(1.3); /* Makes the icon 30% larger */
-z-index: 1;
+/*z-index: 1;*/
 }
 
 .ranking__entry-img {

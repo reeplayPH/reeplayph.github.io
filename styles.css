@@ -421,6 +421,12 @@ body {
   box-sizing: border-box;
   position: relative;
 }
+
+.ranking__entry-icon.big-winner {
+transform: scale(1.3); /* Makes the icon 30% larger */
+z-index: 1;
+}
+
 .ranking__entry-img {
   border-radius: 50%;
   width: inherit;

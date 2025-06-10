@@ -402,8 +402,8 @@ body {
 }
 .ranking__entry-view {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin: 10px 24px 8px 24px;
 }
 

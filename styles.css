@@ -409,8 +409,8 @@ body {
 
 .ranking__entry-view.big-winner {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: 10px 24px 8px 24px;
 }
 .ranking__entry-icon {

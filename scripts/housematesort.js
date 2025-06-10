@@ -62,7 +62,6 @@ function showEvictedClick(event) {
     }
     sortRenderTable();
     rerenderRanking(); // Updates both ranking pyramids
-    populateRanking(); // Ensure pyramids reflect changes
 }
 
 function showBig4Click(event) {
@@ -74,7 +73,6 @@ function showBig4Click(event) {
   }
   rerenderTable();
   rerenderRanking(); // Updates both ranking pyramids
-  populateRanking(); // Ensure pyramids reflect changes
 }
 
 function showNominatedClick(event) {
@@ -86,7 +84,6 @@ function showNominatedClick(event) {
   }
   rerenderTable();
   rerenderRanking(); // Updates both ranking pyramids
-  populateRanking(); // Ensure pyramids reflect changes
 }
 
 // sort and rerender the table after applying sorting changes

@@ -1,29 +1,45 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  console.log("Page loaded. Initializing...");
-
-  try {
-    // Step 1: Initialize blank rankings
-    ranking = newRanking();
-    console.log("Initialized rankings:", ranking);
-
-    // Step 2: Fetch any saved rankings from the URL
-    console.log("Fetching saved rankings (if any)...");
-    getRanking();
+//document.addEventListener("DOMContentLoaded", async function () {
+//  console.log("Page loaded. Initializing...");
+//
+// try {
+//    // Step 1: Initialize blank rankings
+//    ranking = newRanking();
+//   console.log("Initialized rankings:", ranking);
+//
+//    // Step 2: Fetch any saved rankings from the URL
+//    console.log("Fetching saved rankings (if any)...");
+//    getRanking();
 
     // Step 3: Fetch CSV and populate the table
-    console.log("Fetching CSV data...");
-    await readFromCSV("./final_duo_info.csv");
-    console.log("CSV data successfully loaded and table populated.");
+ //   console.log("Fetching CSV data...");
+ //   await readFromCSV("./final_duo_info.csv");
+ //   console.log("CSV data successfully loaded and table populated.");
 
     // Step 4: Populate the ranking pyramids
     //console.log("Populating ranking pyramids...");
     // populateRanking();
     //console.log("Ranking pyramids populated successfully.");
 
-  } catch (error) {
-    console.error("An error occurred during initialization:", error);
-  }
-});
+//  } catch (error) {
+//    console.error("An error occurred during initialization:", error);
+//  }
+//});
+
+function readFromCSV(path) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", path, false);
+  rawFile.onreadystatechange = function() {
+    if (rawFile.readyState === 4) {
+      if (rawFile.status === 200 || rawFile.status == 0) {
+        let allText = rawFile.responseText;
+        let out = CSV.parse(allText);
+        let housemates = convertCSVArrayToHousemateData(out);
+        populateTable(housemates);
+      }
+    }
+  };
+  rawFile.send(null);
+}
 
 // Constructor for a blank ranking list
 function newRanking() {
@@ -37,22 +53,22 @@ function newRanking() {
 }
 
 // Enhanced readFromCSV to handle errors gracefully
-async function readFromCSV(path) {
-  try {
-    const response = await fetch(path);
-    if (response.ok) {
-      const allText = await response.text();
-      const csvData = CSV.parse(allText);
-      const housemates = convertCSVArrayToHousemateData(csvData);
-      populateTable(housemates);
-      console.log("Table data populated:", housemates);
-    } else {
-      console.error("Failed to fetch CSV. HTTP Status:", response.status);
-    }
-  } catch (error) {
-    console.error("Error fetching or parsing the CSV file:", error);
-  }
-}
+//async function readFromCSV(path) {
+//  try {
+//    const response = await fetch(path);
+//    if (response.ok) {
+//      const allText = await response.text();
+//      const csvData = CSV.parse(allText);
+//      const housemates = convertCSVArrayToHousemateData(csvData);
+//      populateTable(housemates);
+//      console.log("Table data populated:", housemates);
+//    } else {
+//      console.error("Failed to fetch CSV. HTTP Status:", response.status);
+//    }
+//  } catch (error) {
+//    console.error("Error fetching or parsing the CSV file:", error);
+//  }
+//}
 
 function convertCSVArrayToHousemateData(csvArrays) {
   try {

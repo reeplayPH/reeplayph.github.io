@@ -313,7 +313,7 @@ body {
   background-origin: content-box;
 }
 
-.table__entry-nominated, .ranking__entry-nominated {
+.table__entry-nominated {
   position: absolute;
   box-sizing: border-box;
   top: 2px;
@@ -322,6 +322,40 @@ body {
   margin: auto;
   width: 70px;
   height: 70px;
+  border-radius: 50%;
+  background-image: url(assets/nominated.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+}
+
+ranking__entry-nominated {
+  position: absolute;
+  box-sizing: border-box;
+  top: -1px;
+  left: -4px;
+  right: 0;
+  margin: auto;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-image: url(assets/nominated.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+}
+
+ranking__entry-nominated.big-winner {
+  position: absolute;
+  box-sizing: border-box;
+  top: -10px;
+  left: -15px;
+  right: 0;
+  margin: auto;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background-image: url(assets/nominated.png);
   background-size: cover;

@@ -18,7 +18,7 @@
   --c-rank: #0544FF; /*blue*/
   --d-rank: #F907B0; /*pink*/
   --f-rank: #7DDA58; /*green*/
-  --no-rank: #000000; 
+  --no-rank: #CECECE;  /*gray*/
 }
 
 p {

@@ -330,7 +330,7 @@ body {
   background-origin: content-box;
 }
 
-ranking__entry-nominated {
+.ranking__entry-nominated {
   position: absolute;
   box-sizing: border-box;
   top: -1px;
@@ -347,7 +347,7 @@ ranking__entry-nominated {
   background-origin: content-box;
 }
 
-ranking__entry-nominated.big-winner {
+.ranking__entry-nominated.big-winner {
   position: absolute;
   box-sizing: border-box;
   top: -10px;

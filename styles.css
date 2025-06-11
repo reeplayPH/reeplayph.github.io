@@ -444,7 +444,6 @@ body {
   height: 80px;
   margin: 15px 15px 8px 15px;
 }
-
 .ranking__entry-view.big-winner {
   position: relative;
   width: 150px;
@@ -466,6 +465,11 @@ transform: scale(1.3); /* Makes the icon 30% larger */
 } */
 
 .ranking__entry-img {
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+}
+.ranking__entry-img.big-winner {
   border-radius: 50%;
   width: inherit;
   height: inherit;

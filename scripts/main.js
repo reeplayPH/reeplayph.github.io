@@ -263,7 +263,7 @@ function populateRankingEntry(housemate, currRank) {
 	<div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
 	</div>
 	<div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
-	${nominated ? '<div class="ranking__entry-nominated ${bigWinnerClass}"></div>' : ''}
+ 	${nominated ? `<div class="ranking__entry-nominated ${bigWinnerClass}"></div>` : ''}
 	</div>
 	<div class="ranking__row-text">
 	<div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>

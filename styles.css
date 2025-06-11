@@ -376,6 +376,9 @@ ranking__entry-nominated.big-winner {
 .d-rank-border {
   border: 5px solid var(--d-rank);
 }
+.e-rank-border {
+  border: 5px solid var(--e-rank);
+}
 .f-rank-border {
   border: 5px solid var(--f-rank);
 }

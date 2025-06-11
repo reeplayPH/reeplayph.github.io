@@ -1,15 +1,17 @@
-This is personal ranker that allows you to rank and sort your own Big 4 for Pinoy Big Brother (PBB) Collab Celebrity Edition. 
+This is personal ranker that allows you to rank and sort your own Final Big 4 Duos for Pinoy Big Brother (PBB) Collab Celebrity Edition. 
 
 <b>FUNCTIONALITY:</b>
 * add and remove housemate on the table through click
-* search housemates by their name, agency(Star Magic / Sparkle), monicker, nickname and location
-* activate filters that show which housemates have been evicted; and nominated, if any
+* search housemates by their name, monicker, nickname and duoname
+* activate filters that show which duos have been evicted; and nominated, if any
+* sort housemates' ranking through drag & drop
+* save a link of your current ranking to revisit it as the episodes progress
 
 ![Screenshot](screenshot.png)
 
 <b>FUTURE UPDATES:</b>
-* sort housemates' through drag & drop
-* save a link of your current ranking to revisit it as the episodes progress
+* official color of each duo
+
 
 
 

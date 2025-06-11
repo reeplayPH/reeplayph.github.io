@@ -527,6 +527,9 @@ transform: scale(1.3); /* Makes the icon 30% larger */
 .bg-d {
   background-color: var(--d-rank);
 }
+.bg-e {
+  background-color: var(--e-rank);
+}
 .bg-f {
   background-color: var(--f-rank);
 }

@@ -229,33 +229,32 @@ function populateRanking() {
 
 // Uses populated local data structure from getRanking to populate ranking
 function populateRankingEntry(housemate, currRank) {
-let evicted = (showEvicted && housemate.evicted) ? "evicted" : "";
-let nominated = (showNominated && housemate.nominated) ? "nominated" : "";
-let RankTag = "BIG WINNER";
-let bigWinnerClass = "";
+	let evicted = (showEvicted && housemate.evicted) ? "evicted" : "";
+	let nominated = (showNominated && housemate.nominated) ? "nominated" : "";
+	let RankTag = "BIG WINNER";
+	let bigWinnerClass = "big-winner";
 
-if (currRank !== 1) {
-RankTag = currRank.toString(); 
-} else {
-bigWinnerClass = "big-winner";
-}
+	if (currRank !== 1) {
+		RankTag = currRank.toString();
+		bigWinnerClass = "";
+	} 
 
-const rankingEntry = `
-<div class="ranking__entry ${evicted}">
-<div class="ranking__entry-view ${bigWinnerClass}">
-<div class="ranking__entry-icon">
-<img class="ranking__entry-img" src="assets/final_duo/${housemate.image}" />
-<div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
-</div>
-<div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
-${nominated ? '<div class="ranking__entry-nominated"></div>' : ''}
-</div>
-<div class="ranking__row-text">
-<div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>
-</div>
-</div>`;
-return rankingEntry;
-}
+	const rankingEntry = `
+	<div class="ranking__entry ${evicted}">
+	<div class="ranking__entry-view ${bigWinnerClass}">
+	<div class="ranking__entry-icon">
+	<img class="ranking__entry-img" src="assets/final_duo/${housemate.image}" />
+	<div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
+	</div>
+	<div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
+	${nominated ? '<div class="ranking__entry-nominated"></div>' : ''}
+	</div>
+	<div class="ranking__row-text">
+	<div class="name"><strong>${housemate.duoname.toUpperCase()}</strong></div>
+	</div>
+	</div>`;
+	return rankingEntry;
+	}
 
 // Event handler for ranking
 function rankingClicked(housemate) {

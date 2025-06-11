@@ -139,7 +139,7 @@ function newHousemate() {
 		fullname: '&#8203;',
 		duoname: '&#8203;',
 		duoname2: '&#8203;',
-		duoname2color: 'gray',
+		duoname2color: 'no',
 		image: 'emptyrank.png',
 		selected: false
 	};

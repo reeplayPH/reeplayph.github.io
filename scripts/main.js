@@ -260,9 +260,9 @@ function populateRankingEntry(housemate, currRank) {
 	<div class="ranking__entry-view ${bigWinnerClass}">
 	<div class="ranking__entry-icon">
 	<img class="ranking__entry-img ${bigWinnerClass}" src="assets/final_duo/${bigWinnerClass}${housemate.image}" />
- 	<img class="ranking__entry-logo ${bigWinnerClass}" src="assets/final_duo/${bigWinnerClass}${housemate.image}" />
 	<div class="ranking__entry-icon-border ${housemate.duoname2color.toLowerCase()}-rank-border" data-rankid="${currRank-1}"></div>
-	</div>
+	<img class="ranking__entry-logo ${bigWinnerClass}" src="assets/final_duo/${bigWinnerClass}${housemate.image}" />
+ 	</div>
 	<div class="ranking__entry-icon-badge bg-${housemate.duoname2color.toLowerCase()}">${RankTag}</div>
  	${nominated ? `<div class="ranking__entry-nominated ${bigWinnerClass}"></div>` : ''}
 	</div>

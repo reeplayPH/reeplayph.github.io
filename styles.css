@@ -13,13 +13,13 @@
   --checked-grey: #7b787ae0;
 
   /* ranking border colors */
-  --a-rank: #FFDE59; /*yellow*/
-  --b-rank: #E4080A; /*red*/
-  --c-rank: #0000ff; /*blue*/
-  --d-rank: #F907B0; /*pink*/
-  --e-rank: #EFC3CA; /*rose*/
+  --a-rank: #2388a5; 
+  --b-rank: #fac800;
+  --c-rank: #ad12e4; 
+  --d-rank: #1ee420; 
+  --e-rank: #fe00db; 
   --f-rank: #7DDA58; /*green*/
-  --no-rank: #CECECE;  /*gray*/
+  --no-rank: #1ee420;  /*black*/
 }
 
 p {
